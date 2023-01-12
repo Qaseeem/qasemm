@@ -1,0 +1,99 @@
+<header class="p-3 text-bg-dark">
+  <div class="container">
+    <div
+      class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+    >
+      <a
+        href="/"
+        class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
+      >
+        <svg
+          class="bi me-2"
+          width="40"
+          height="32"
+          role="img"
+          aria-label="Bootstrap"
+        >
+          <use xlink:href="#bootstrap" />
+        </svg>
+        <a class="navbar-brand" href="#">
+          <h4>Qasem Muzafarzada</h4>
+        </a>
+      </a>
+
+      <a
+        href="/"
+        class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
+      >
+        <svg
+          class="bi me-2"
+          width="40"
+          height="32"
+          role="img"
+          aria-label="Bootstrap"
+        >
+          <use xlink:href="#bootstrap" />
+        </svg>
+      </a>
+
+      <ul
+        class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+      >
+        <li>
+          <a class="nav-link active" aria-current="page" href="#">Anasayfa</a>
+        </li>
+        <li>
+          <a class="nav-link active" aria-current="page" href="/anketler"
+            >Anketler</a
+          >
+        </li>
+      </ul>
+
+      <ul
+        class="navbar-nav me-auto mb-2 mb-lg-0"
+        *ngIf="uye | async as user; else loginButton"
+      >
+        <div class="row">
+          <div class="col">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/profil">
+                <button type="button" class="btn btn-warning">
+                  {{ user.displayName }}
+                </button>
+              </a>
+            </li>
+          </div>
+
+          <div class="col">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  (click)="OturumKapat()"
+                >
+                  Çıkış Yap
+                </button>
+              </a>
+            </li>
+          </div>
+        </div>
+      </ul>
+
+      <ng-template #loginButton>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="login">
+              <button type="button" class="btn btn-warning">
+                Oturum Aç
+              </button></a
+            >
+          </li>
+        </ul>
+      </ng-template>
+      <div class="text-end"></div>
+    </div>
+  </div>
+</header>
+
+<router-outlet> </router-outlet>

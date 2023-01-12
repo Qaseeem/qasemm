@@ -1,0 +1,65 @@
+<div style="height: 50px"></div>
+<div class="row mt-5 justify-content-center">
+  <div class="col-md-5">
+    <div class="col-md-5">
+
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4>Sorular</h4>
+        </div>
+        <div class="card-body" *ngFor="let anket of anketler">
+
+          <h5>{{anket.anketadi}}</h5>
+          <hr>
+          <h4>Soru 1:</h4>
+          <h5>{{anket.soru1}}</h5>
+          <h4>Soru 2:</h4>
+
+          <h5>{{anket.soru2}}</h5>
+          <h4>Soru 3:</h4>
+
+          <h5>{{anket.soru3}}</h5>
+          <h4>Soru 4:</h4>
+
+          <h5>{{anket.soru4}}</h5>
+          <h4>Soru 5:</h4>
+
+          <h5>{{anket.soru5}}</h5>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <div class="col-md-5">
+    <form [formGroup]="frm" (ngSubmit)="Kaydet()">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4>ANKETİ CEVAPLA</h4>
+        </div>
+        <div class="card-body">
+          <label>Anket İsmi</label>
+          <input type="text" class="form-control" formControlName="cevapadi" />
+          <label>1.Soru</label>
+          <input type="text" class="form-control" formControlName="soru1Cevap" />
+          <label>2.Soru</label>
+          <input type="text" class="form-control" formControlName="soru2Cevap" />
+          <label>3.Soru</label>
+          <input type="text" class="form-control" formControlName="soru3Cevap" />
+          <label>4.Soru</label>
+          <input type="text" class="form-control" formControlName="soru4Cevap" />
+          <label>5.Soru</label>
+          <input type="text" class="form-control" formControlName="soru5Cevap" />
+          <input type="checkbox" formControlName="tamam" class="form-check-input" />
+          Tamamlandı
+        </div>
+        <div class="card-footer">
+          <input type="submit" class="btn btn-outline-primary" value="Kaydet" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

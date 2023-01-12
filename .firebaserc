@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "deneme-3beca": {
+      "hosting": {
+        "fbuyg": [
+          "deneme-3beca"
+        ]
+      }
+    },
+    "qasem-45116": {
+      "hosting": {
+        "fbuyg": [
+          "qasem-45116"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "qasem-45116"
+  }
+}
